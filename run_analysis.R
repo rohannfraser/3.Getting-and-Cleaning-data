@@ -1,5 +1,5 @@
 #setwd("D:/Stuff/Persoonlik/Study/2.Coursera/3.Getting and Cleaning data/Week3/Course Project/UCI HAR Dataset")
-# Read in all required datafiles into R
+# Step 0: Read in all required datafiles into R
 X_train       <- read.table("train/X_train.txt",         header = FALSE)
 Y_train       <- read.table("train/Y_train.txt",         header = FALSE)
 X_test        <- read.table("test/X_test.txt",          header = FALSE)
@@ -19,7 +19,7 @@ Subject_total <- rbind(Subject_train, Subject_test)
 # Step 2: Merge activity numbers (Y) with activity names(act_lab)
 Y_total  <- data.frame(Y_total, ActivityDescr = act_lab[Y_total[,1],2])
 
-# Step 3: Create a vector indicating whehter observation comes from the original
+# Step 3: Create a vector indicating whether observation comes from the original
 #        training or test dataset
 train_test    <- c(rep("train",dim(Y_train)[1]), rep("test", dim(Y_test)[1]))
 
